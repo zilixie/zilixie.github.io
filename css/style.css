@@ -5,15 +5,19 @@ body {
 }
 
 h3 {
-    text-align: center;
+    padding-left:10%;
 }
 p {
-    text-align: center;
+    padding-left:10%;
 }
 a {
 	display: inline;
     position:relative;
     color: grey;
+}
+hr {
+	margin-top: -20px;
+	width:90%
 }
 
 .inner {
