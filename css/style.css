@@ -1,35 +1,70 @@
 body {
     font: 300 12pt/15pt "DINPro", "Helvetica", sans-serif;
     margin: 0 auto; 
-    background-color:orange;
+    background-color:#EFEFEF;
 }
-
-h3 {
-    padding-left:10%;
+h2 {
+    padding-left:5%;
 }
 p {
-    padding-left:10%;
+    padding-left:5%;
+    padding-right:5%;
 }
 a {
-	display: inline;
+    display: inline;
     position:relative;
     color: grey;
 }
-hr {
-	margin-top: -20px;
-	width:90%
+.icons {
+  float:right;
 }
 
-.inner {
-	padding-top:10px;
-	padding-bottom:20px;
-	height:100%;
-	width: 800px; margin: 0 auto;
-	margin-top: 25px;
-	margin-bottom: 25px;
-	border:1px solid black; 
-	background-color:white;
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 48px;
 }
-.icons {
-	padding-left:47%;
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.aboutme {
+    float: left; 
+    width: 65%
+}
+
+@media (max-width: 1200px) {
+  .aboutme {
+      float: left; 
+      width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+  .aboutme {
+      float: left; 
+      width: 35%;
+    }
+}
+
+@media (max-width: 600px) {
+  .aboutme {
+      float: left; 
+      width: 100%;
+    }
 }
