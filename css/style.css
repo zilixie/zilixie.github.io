@@ -1,22 +1,25 @@
 body {
-    font: 300 12pt/15pt "DINPro", "Helvetica", sans-serif;
-    margin: 0 auto; 
-    background-color:#EFEFEF;
+  font: 300 12pt/15pt "DINPro", "Helvetica", sans-serif;
+  margin: 0 auto; 
+  background-color:#EFEFEF;
 }
 h2 {
-    padding-left:5%;
+  padding-left:5%;
 }
 p {
-    padding-left:5%;
-    padding-right:5%;
+  padding-left:5%;
+  padding-right:5%;
 }
 a {
-    display: inline;
-    position:relative;
-    color: grey;
+  display: inline;
+  position:relative;
+  color: grey;
 }
 .icons {
   float:right;
+}
+.menu {
+  display: none;
 }
 
 .navbar {
@@ -44,27 +47,58 @@ a {
 }
 
 .aboutme {
-    float: left; 
-    width: 65%
+  float: left; 
+  width: 65%
 }
 
 @media (max-width: 1200px) {
   .aboutme {
-      float: left; 
-      width: 50%;
-    }
+    float: left; 
+    width: 50%;
+  }
 }
 
 @media (max-width: 800px) {
   .aboutme {
-      float: left; 
-      width: 35%;
-    }
+    float: left; 
+    width: 35%;
+  }
 }
 
 @media (max-width: 600px) {
   .aboutme {
-      float: left; 
-      width: 100%;
-    }
+    float: left; 
+    width: 100%;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 4px;
+    text-decoration: none;
+    font-size: 17px;
 }
+  /*
+  .navbar a {
+    display: none;
+  }
+  .icons a {
+    display: block;
+  }
+  .menu {
+    display: block;
+  }
+  .menu a {
+    display: block;
+    float: left;
+  }
+  #myLinks {
+    display: none;
+  }*/
+}
+
+
+
+
+

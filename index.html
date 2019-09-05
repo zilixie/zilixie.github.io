@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="scripts/control.js"></script>
     <title>ZILI XIE</title>
 </head>
 
 <body style="min-width: 100%;">
-	<div class="navbar">
+	<div class="navbar" id="nbar">
+		<!--
+		<div class="menu">
+			<a style="font-size:22px" class="fa fa-bars" onclick="myFunction()"></a>
+			<div id="myLinks">
+			 	
+    			<a href="#news">News</a>
+    			<a href="#contact">Contact</a>
+    			<a href="#about">About</a>
+  			</div>
+		</div>-->
+
+
+
   		<a href="https://zilixie.github.io/">Home</a>
   		<a href="https://zilixie.github.io/coursework">Course Work</a>
   		<a href="https://zilixie.github.io/employment">Employment</a>
+
 
   		<div class="icons">
 	  		<a style="font-size:24px" class="fa fa-github" href="https://github.com/zilixie/" ></a>
@@ -34,6 +51,17 @@
 		</div>
 			
 	</div>
+
+	<script>
+	function myFunction() {
+	  	var x = document.getElementById("myLinks");
+	  	if (x.style.display === "block") {
+	    	x.style.display = "none";
+	  	} else {
+	    	x.style.display = "block";
+	  	}
+	}
+	</script>
 
 </body>
 </html>
