@@ -1,4 +1,13 @@
- .fakeimg {
+.fakeimg {
     height: 200px;
     background: #aaa;
+}
+.aboutme {
+	float: right;
+}
+
+@media (max-width: 768px) {
+  .aboutme {
+    float: none; 
   }
+}
