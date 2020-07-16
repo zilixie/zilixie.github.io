@@ -1,52 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Zili Xie's Home Page</title>
+	<title>Zili Xie 🏠</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link href="modules/hover/css/hover.css" rel="stylesheet" media="all">
+	<link href="css/style.css" rel="stylesheet" >
+	<script type="text/javascript" src="modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/style.css">
-	<script>
-		
-	</script>
+
+	<link rel="stylesheet" href="css/ideal-image-slider.css">
+	<link rel="stylesheet" href="css/default.css">
+	<script src="modules/ideal-image-slider.js"></script>
 </head>
-<body>
+<body style="background-image: url('images/bg.jpg'); background-repeat: no-repeat; background-attachment: fixed;  background-size: cover;">
 
-<video autoplay muted loop id="myVideo" style="height: 100%">
-	<source src="p11.mp4" type="video/mp4">
-	Your browser does not support HTML5 video.
-</video>
 
-<div class="content">
+<!-- <div class="w3-content w3-display-container">
+	<img class="mySlides" src="otter.jpg" style="width:100%">
+	<img class="mySlides" src="ut.png" style="width:100%">
+	<img class="mySlides" src="traffic1.png" style="width:100%">
+
+	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div> -->
+
+
 	<div class="container">
 		<div class="row">
-			<h1>Zili Xie's Home Page</h1>
-			<p>Hi there, I am Zili. I am currently a master student in computer science at New York University (2019.09 - 2021.05) and previously an undergrad student at University of Toronto st. George, also majoring in computer science (2014.09 - 2019.05, With Distinction, Top 25% in CS department) <a href="#" data-toggle="collapse" data-target="#demo" style="color:lime">see all ...</a> <div id="demo" class="collapse"><p>I am interested in a wide range of areas in computer science: database systems, big data analytics, programming languages, algorithm design, AI/Machine Learning techniques, computer vision... and some interdisciplinary areas such as computer graphics, visualizations. Currently my favourite field in computer science is computer graphic. I got so much fun from it and i am always excited about learning new knowledge in this field.</p> <p>I worked at OTPP (Ontario Teachers' Pension Plan) as a PEY student for 1 year (from May 2017 to April 2018) and worked at Teradata as summer intern during May to Auguest 2016.</p></div> 
-
-			</p>
-
-			<ul class="nav nav-pills flex-column">
-			<li class="nav-item" style="margin-top: -10px;">
-				<a class="link" href="pdf/Resume_M3.pdf">Resume</a>
-			</li>
-			<li class="nav-item" style="margin-top: -20px;">
-				<a class="link" href="https://zilixie.github.io/coursework/">Projects</a>
-			</li>
-			<li class="nav-item" style="margin-top: -20px;">
-				<a class="link" href="https://github.com/zilixie/">Github</a>
-			</li>
-			<li class="nav-item" style="margin-top: -20px;">
-				<a class="link" href="https://www.linkedin.com/in/zili-xie-59a990141/">Linkedin</a>
-			</li>
-			</ul>
+			<div class="col-lg-4" style="margin-top: 30px;">
+				<div id="special-resize-1" class="card h-100" style="border-radius: 0px;">
+					<img id="special-resize-img-1" class="card-img-top" src="images/otter.jpg" style="border-radius: 0px;">
+					<div id="special-resize-div-1" class="card-body" style="text-align: center;vertical-align: middle;">
+						<h4 class="card-title">Zili Xie | 子立 谢 </h4>
+						<p class="card-text">MS. Computer Science<br>Tandon School of Eng.<br>New York University
+							<h6>Email: zx979(at)nyu.edu</h6><i style="font-size:24px" class="fa">&#xf09b;</i><i style="font-size:24px" class="fa">&#xf08c;</i></p>
+						<!-- <a href="#" class="btn btn-primary hvr-float" onclick="show();">Go somewhere</a> -->
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-8" style="margin-top: 30px;">
+				<div class="card h-100" style="border-radius: 0px;">
+					<div class="card-body" style="background-image: url('images/bg3.png'); background-size: cover;">
+						<h4 class="card-title" style="color: white">About</h4>
+						<p class="card-text" style="color: white">
+						Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.<br>
+						</p>
+						<a href="resources/Resume_2020_v2.0.pdf" class="btn btn-primary hvr-float">My Resume</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
 
+		<div class="row">
+		<div class="col-lg-12" style="margin-top: 30px;">
+			<div class="card h-100 flex-row flex-wrap" style="border-radius: 0px;">
+				<div id="special-resize-img-2" class="image-blurred-edge" style="background-image: url('images/IMG_1996.png'); background-size: cover;"></div>
+				<!-- <img src="ut3.jpg" style="height: 300px;"> -->
+				<div class="card-body" style="text-align: center; vertical-align: middle; width: 30%;">
+					<h4 class="card-title">Education</h4>
+					<p class="card-text">
+						2019.09~2021.05: Master's degree in Computer Science. <br>at New York Univeristy (NYU)<br><br>
+						2014.09~2019.05: Bachelor's degree in Computer Science. <br>at University of Toronto, st. George (UTSG)
+					</p>
+					<div style="text-align: center;vertical-align: middle;">
+						<img style="width: 140px; margin-right: 5px; border-radius: 5px;" src="images/ut2.png">
+						<img style="width: 120px; border-radius: 0px; border-radius: 5px;" src="images/nyu.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" id="gallery" style="border-radius: 0px;">
+
+					<div class="mySlides" style="background-image: url('images/untitle4.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/untitle1.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/untitle2.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/img2.jpg'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/untitle3.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/icon.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+						</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/untitle0.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+					</div>
+					</div>
+
+					<div class="mySlides" style="background-image: url('images/untitle5.png'); background-size: cover; height: 100%;">
+						<div class="card-body">
+						<h4 class="card-title" style="color: white">Photos</h4>
+						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
+					</div>
+					</div>
+					<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+					<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+				
+			</div>
+		</div>
+
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" style="border-radius: 0px;">
+				<div class="card-body">
+					<h4 class="card-title">Interns</h4>
+					<p class="card-text">
+						2020.05~Present: 4D Shoetech (时谛智能)<br>
+						2017.05~2018.04: Ontario Teachers' Pension Plan (OTPP)<br>
+						2016.05~2016.08: Teradata
+					</p>
+					<div style="text-align: center;vertical-align: middle;">
+						<img style="width: 160px; margin-right: 20px; border-radius: 5px;" src="images/4d.png">
+						<img style="width: 140px; margin-right: 20px; margin-bottom: 5px; border-radius: 5px;" src="images/otpp.png">
+						<img style="width: 140px; border-radius: 5px;" src="images/tera.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" style="border-radius: 0px;">
+				<div class="card-body">
+					<h6 class="card-title">Project</h6>
+					<h4 class="card-title">VisML-Colorization</h4>
+					<p class="card-text">An implementation & visualization of image colorization deep learning model using d3js.</p>
+					<a href="https://github.com/zilixie/VisML-Colorize" class="btn btn-primary hvr-float">See on Github</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" style="border-radius: 0px;">
+				<div class="card-body">
+					<h6 class="card-title">Project</h6>
+					<h4 class="card-title">Material Scan: svbrdf</h4>
+					<p class="card-text">An implementation & visualization of a Unet image colorization deep learning model using CNN.</p>
+					<a href="#" class="btn btn-primary hvr-float">To Project</a>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" style="border-radius: 0px;">
+				<div class="card-body">
+					<h6 class="card-title">Project</h6>
+					<h4 class="card-title">3D Scene Editor+</h4>
+					<p class="card-text">OpenGL + Eigen + SOIL. <br>Add/remove/move/scale/rotate objects.<br>Supports texture/height/normal maps.<br>Supports percedural texture using Perlin noise.</p>
+					<a href="https://github.com/zilixie/Relief-and-Normal-Mapping" class="btn btn-primary hvr-float">To Project</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6" style="margin-top: 30px;">
+			<div class="card h-100" style="border-radius: 0px;">
+				<div class="card-body">
+					<h6 class="card-title">Homework</h6>
+					<h4 class="card-title">3D Scene Editor</h4>
+					<p class="card-text">OpenGL + Eigen. <br>Add/remove/move/scale/rotate objects.<br>Blinn-Phong shading.<br>Capture screen and produce svg.</p>
+					<a href="https://github.com/zilixie/3D-Scene-Editor" class="btn btn-primary hvr-float">To Project</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div style="margin-bottom: 30px;"></div>
+	</div>
 
 </body>
+
+<script type="text/javascript">
+document.body.style.zoom="75%"
+$(document).ready(function(){
+    w_w = $(window).width();
+    if(w_w < 992){
+        $("#special-resize-1").addClass('flex-row flex-wrap');
+        $("#special-resize-img-1").removeClass('card-img-top');
+        $("#special-resize-img-1").css('height', '260px');
+        $("#special-resize-div-1").css('width', '30%');
+
+        // $("#special-resize-img-2").css('height', '400px');
+        // $("#special-resize-img-2").css('width', '200px');
+    }
+    //onResize
+    $(window).resize(function(){
+    w_w = $(window).width();
+    if(w_w < 992){
+        $("#special-resize-1").addClass('flex-row flex-wrap');
+        $("#special-resize-img-1").removeClass('card-img-top');
+        $("#special-resize-img-1").css('height', '260px');
+        $("#special-resize-div-1").css('width', '30%');
+
+        // $("#special-resize-img-2").css('height', '400px');
+        // $("#special-resize-img-2").css('width', '200px');
+    }
+    });
+
+    w_w = $(window).width();
+    if(w_w >= 992){
+        $("#special-resize-1").removeClass('flex-row flex-wrap');
+        $("#special-resize-img-1").addClass('card-img-top');
+        $("#special-resize-img-1").css('height', '');
+        $("#special-resize-div-1").css('width', '');
+
+        // $("#special-resize-img-2").css('height', '300px');
+        // $("#special-resize-img-2").css('width', '400px');
+    }
+    //onResize
+    $(window).resize(function(){
+    w_w = $(window).width();
+    if(w_w >= 992){
+        $("#special-resize-1").removeClass('flex-row flex-wrap');
+        $("#special-resize-img-1").addClass('card-img-top');
+        $("#special-resize-img-1").css('height', '');
+        $("#special-resize-div-1").css('width', '');
+
+        // $("#special-resize-img-2").css('height', '300px');
+        // $("#special-resize-img-2").css('width', '400px');
+    }
+    });
+});
+
+var slideIndex = 1;
+showDivs(slideIndex);
+// new IdealImageSlider.Slider('#slider');
+
+// window.setInterval(function () {plusDivs(1)}, 3000);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+
+
+function show() {
+	Swal.fire({
+	  title: '<h4>Hello</h4>',
+	  width: '60%',
+	  html:
+	    	'<p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><a href="#" class="btn btn-primary hvr-float">Go somewhere</a>',
+	  showCloseButton: true,
+	  showConfirmButton: false,
+	})
+}
+
+</script>
+
+
 </html>

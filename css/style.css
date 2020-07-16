@@ -1,96 +1,85 @@
-
-#myVideo {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%; 
-	min-height: 100%;
+@media (min-width:0px) {
+    #special-resize-img-2 {
+        height: 380px;
+        width: 200px;
+    }
+}
+@media (min-width:576px) {
+    #special-resize-img-2 {
+        height: 440px;
+        width: 200px;
+    }
+    #gallery {
+        height: 380px;
+    }
+}
+@media (min-width:768px) {
+    #special-resize-img-2 {
+        height: 380px;
+        width: 300px;
+    }
 }
 
-.content {
-	position: relative;
-	bottom: -500px;
-	background: rgba(0, 0, 0, 0.5);
-	color: #f1f1f1;
-	width: 101.5%;
-	padding: 20px;
-	margin-left: -8px;
+@media (min-width:992px) {
+    #special-resize-img-2 {
+        height: 300px;
+        width: 420px;
+    }
 }
 
-#myBtn {
-	width: 200px;
-	font-size: 18px;
-	padding: 10px;
-	border: none;
-	background: #000;
-	color: #fff;
-	cursor: pointer;
+@media (min-width:1200px) {
+    #special-resize-img-2 {
+        height: 300px;
+        width: 500px;
+    }
+}
+body {
+    font-family: 'Avenir';
 }
 
-#myBtn:hover {
-	background: #ddd;
-	color: black;
+.row {
 }
 
-.fakeimg {
+.goto {
+}
+
+.card-text {
+    font-size: 15px;
+}
+
+#image-blurred-edge {
+    background-image: url('otter.jpg');
+    width: 200px;
     height: 200px;
-    background: #aaa;
-}
-.aboutme {
-	float: right;
-}
-
-@media (max-width: 768px) {
-	.aboutme {
-		float: none;
-		display: table;
-		margin: 0 auto;
-	}
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 8px 8px white inset;
+    border: solid black 1px;
 }
 
-
-h1,div{ 
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
- 	font-size: 80px; 
- 	font-style: normal; 
- 	font-variant: normal; 
- 	font-weight: 100;
- 	line-height: 82px; 
+#cf {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
 }
 
-h2 { 
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
-	font-size: 22px; 
-	font-style: normal; 
-	font-variant: normal; 
-	font-weight: lighter;
-	line-height: 24px; 
-} 
-
-
-h3 { 
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
-	font-size: 16px; 
-	font-style: normal; 
-	font-variant: normal; 
-	font-weight: lighter;
-	line-height: 18px; 
-} 
-
-p, a {
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
-	font-size: 14px; 
-	font-style: normal; 
-	font-variant: normal; 
-	font-weight: lighter;
-	line-height: 20px; 
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
-.link { 
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
- 	font-size: 60px; 
- 	font-style: normal; 
- 	font-variant: normal; 
- 	font-weight: 100;
- 	line-height: 62px; 
+
+#cf img.top:hover {
+  opacity:0;
 }
+
+
+
+
+
+
+
 
