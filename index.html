@@ -1,306 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Zili Xie 🏠</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link href="modules/hover/css/hover.css" rel="stylesheet" media="all">
-	<link href="css/style.css" rel="stylesheet" >
-	<script type="text/javascript" src="modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <title>Zili Xie</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gray: #f0f0f0;
+      --border: 2px solid #000;
+      --shadow: 5px 5px 0 #000;
+    }
 
-	<link rel="stylesheet" href="css/ideal-image-slider.css">
-	<link rel="stylesheet" href="css/default.css">
-	<script src="modules/ideal-image-slider.js"></script>
+    html { font-size: 16px; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Courier New', Courier, monospace;
+      padding: 24px;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 20px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    header .sub {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    header .contact {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-align: right;
+    }
+
+    header .contact a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-3-1 { grid-template-columns: 1fr 2fr; }
+
+    /* ── PANEL ── */
+    .panel {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .panel-label {
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding: 20px;
+    }
+
+    .panel-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .panel-text {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #222;
+    }
+
+    /* ── PROFILE PANEL ── */
+    .profile-panel {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-panel .img-wrap {
+      position: relative;
+      border-bottom: var(--border);
+      overflow: hidden;
+    }
+
+    .profile-panel .img-wrap img {
+      width: 100%;
+      display: block;
+      filter: grayscale(100%) contrast(1.6) brightness(0.88) sepia(0.25);
+    }
+
+    /* halftone dot overlay */
+    .profile-panel .img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, #000 1.2px, transparent 1.2px);
+      background-size: 5px 5px;
+      opacity: 0.18;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .profile-info {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .profile-name {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      border-bottom: var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .profile-name span {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .profile-meta {
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .profile-email {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      background: var(--black);
+      color: var(--white);
+      padding: 4px 10px;
+    }
+
+    .icon-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .icon-btn {
+      border: var(--border);
+      padding: 6px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--black);
+      text-decoration: none;
+      font-family: inherit;
+      font-weight: 700;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    .icon-btn:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ── ABOUT PANEL ── */
+    .about-panel {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-panel .panel-label {
+      background: var(--white);
+      color: var(--black);
+      border-bottom: var(--border);
+    }
+
+    .about-panel .panel-body {
+      flex: 1;
+    }
+
+    .about-panel .panel-title {
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .about-panel .panel-text {
+      color: #ccc;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .about-panel .btn {
+      margin-top: 20px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      border: var(--border);
+      padding: 9px 18px;
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.1s, color 0.1s, box-shadow 0.1s;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--black);
+      box-shadow: 3px 3px 0 #fff;
+    }
+
+    .btn-primary:hover {
+      background: #ddd;
+      box-shadow: none;
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: 3px 3px 0 #555;
+    }
+
+    .btn-dark:hover {
+      background: #333;
+      box-shadow: none;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-entry {
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #000;
+    }
+
+    .edu-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .edu-year {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 3px;
+    }
+
+    .edu-deg {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .edu-school {
+      font-size: 0.78rem;
+      color: #333;
+    }
+
+    .logo-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .logo-row img {
+      height: 36px;
+      filter: grayscale(100%) contrast(1.2);
+      border: var(--border);
+      padding: 4px 8px;
+      background: #fff;
+    }
+
+    /* ── INTERNS ── */
+    .intern-entry {
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #000;
+    }
+
+    .intern-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .intern-period {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .intern-company {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .intern-logos {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .intern-logos img {
+      height: 32px;
+      filter: grayscale(100%) contrast(1.2);
+      border: var(--border);
+      padding: 4px 8px;
+      background: #fff;
+    }
+
+    /* ── PROJECT PANEL ── */
+    .project-tag {
+      font-size: 0.6rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      border: var(--border);
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: 8px;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0 0;
+    }
+
+    .section-divider span {
+      font-size: 0.65rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--black);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 24px;
+      border: var(--border);
+      box-shadow: var(--shadow);
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 20px;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      body { padding: 12px; }
+      .grid-2, .grid-3, .grid-3-1 { grid-template-columns: 1fr; }
+      header { flex-direction: column; }
+      header .contact { text-align: left; }
+    }
+  </style>
 </head>
-<body style="background-image: url('images/bg.jpg'); background-repeat: no-repeat; background-attachment: fixed;  background-size: cover;">
+<body>
 
+  <!-- HEADER -->
+  <header>
+    <div>
+      <h1>Zili Xie</h1>
+      <div class="sub">子立 谢 &nbsp;/&nbsp; Portfolio</div>
+    </div>
+    <div class="contact">
+      MS Computer Science &mdash; NYU Tandon<br>
+      zx979(at)nyu.edu
+    </div>
+  </header>
 
-<!-- <div class="w3-content w3-display-container">
-	<img class="mySlides" src="otter.jpg" style="width:100%">
-	<img class="mySlides" src="ut.png" style="width:100%">
-	<img class="mySlides" src="traffic1.png" style="width:100%">
+  <!-- ROW 1: Profile + About -->
+  <div class="grid grid-3-1">
 
-	<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-	<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-</div> -->
+    <div class="profile-panel">
+      <div class="img-wrap"><img src="images/img2.jpg" alt="Zili Xie"></div>
+      <div class="profile-info">
+        <div class="profile-name">
+          Zili Xie
+          <span>子立 谢</span>
+        </div>
+        <div class="profile-meta">
+          MS Computer Science<br>
+          NYU Tandon School of Engineering<br>
+          New York University
+        </div>
+        <div class="profile-email">zx979(at)nyu.edu</div>
+        <div class="icon-row">
+          <a class="icon-btn" href="https://github.com/zilixie" target="_blank">GitHub</a>
+          <a class="icon-btn" href="#" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
 
+    <div class="about-panel">
+      <div class="panel-label">About Me</div>
+      <div class="panel-body">
+        <div class="panel-title">Hi, I'm Zili.</div>
+        <p class="panel-text">
+          I am a second year master's student in Computer Science at New York University. Before joining NYU, I received my bachelor's degree in Computer Science (specialist program) and Statistics (minor) at the University of Toronto, St. George campus, with distinction.
+          <br><br>
+          My main areas of interest are Machine Learning, Computer Vision, and Computer Graphics.
+        </p>
+        <a href="resources/Resume_2020_v2.0.pdf" class="btn btn-primary">Resume &rarr;</a>
+      </div>
+    </div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4" style="margin-top: 30px;">
-				<div id="special-resize-1" class="card h-100" style="border-radius: 0px;">
-					<img id="special-resize-img-1" class="card-img-top" src="images/otter.jpg" style="border-radius: 0px;">
-					<div id="special-resize-div-1" class="card-body" style="text-align: center;vertical-align: middle;">
-						<h4 class="card-title">Zili Xie | 子立 谢 </h4>
-						<p class="card-text">MS. Computer Science<br>Tandon School of Eng.<br>New York University
-							<h6>Email: zx979(at)nyu.edu</h6><i style="font-size:24px" class="fa">&#xf09b;</i><i style="font-size:24px" class="fa">&#xf08c;</i></p>
-						<!-- <a href="#" class="btn btn-primary hvr-float" onclick="show();">Go somewhere</a> -->
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-8" style="margin-top: 30px;">
-				<div class="card h-100" style="border-radius: 0px;">
-					<div class="card-body" style="background-image: url('images/bg3.png'); background-size: cover;">
-						<h4 class="card-title" style="color: white">About</h4>
-						<p class="card-text" style="color: white">
-						Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.<br>
-						</p>
-						<a href="resources/Resume_2020_v2.0.pdf" class="btn btn-primary hvr-float">My Resume</a>
-					</div>
-				</div>
-			</div>
-		</div>
+  </div>
 
-		<div class="row">
-		<div class="col-lg-12" style="margin-top: 30px;">
-			<div class="card h-100 flex-row flex-wrap" style="border-radius: 0px;">
-				<div id="special-resize-img-2" class="image-blurred-edge" style="background-image: url('images/IMG_1996.PNG'); background-size: cover;"></div>
-				<!-- <img src="ut3.jpg" style="height: 300px;"> -->
-				<div class="card-body" style="text-align: center; vertical-align: middle; width: 30%;">
-					<h4 class="card-title">Education</h4>
-					<p class="card-text">
-						2019.09~2021.05: Master's degree in Computer Science. <br>at New York Univeristy (NYU)<br><br>
-						2014.09~2019.05: Bachelor's degree in Computer Science. <br>at University of Toronto, st. George (UTSG)
-					</p>
-					<div style="text-align: center;vertical-align: middle;">
-						<img style="width: 140px; margin-right: 5px; border-radius: 5px;" src="images/ut2.png">
-						<img style="width: 120px; border-radius: 0px; border-radius: 5px;" src="images/nyu.png">
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" id="gallery" style="border-radius: 0px;">
+  <!-- SECTION: Education + Internships -->
+  <div class="section-divider"><span>Background</span></div>
 
-					<div class="mySlides" style="background-image: url('images/untitle4.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+  <div class="grid grid-2" style="margin-top: 24px;">
 
-					<div class="mySlides" style="background-image: url('images/untitle1.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+    <div class="panel">
+      <div class="panel-label">Education</div>
+      <div class="panel-body">
+        <div class="edu-entry">
+          <div class="edu-year">2019.09 &ndash; 2021.05</div>
+          <div class="edu-deg">Master's in Computer Science</div>
+          <div class="edu-school">New York University (NYU)</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-year">2014.09 &ndash; 2019.05</div>
+          <div class="edu-deg">Bachelor's in Computer Science</div>
+          <div class="edu-school">University of Toronto, St. George (UTSG)</div>
+        </div>
+        <div class="logo-row">
+          <img src="images/ut2.png" alt="UofT">
+          <img src="images/nyu.png" alt="NYU">
+        </div>
+      </div>
+    </div>
 
-					<div class="mySlides" style="background-image: url('images/untitle2.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+    <div class="panel">
+      <div class="panel-label">Experience</div>
+      <div class="panel-body">
+        <div class="intern-entry">
+          <div class="intern-period">2020.05 &ndash; Present</div>
+          <div class="intern-company">4D Shoetech (时谛智能)</div>
+        </div>
+        <div class="intern-entry">
+          <div class="intern-period">2017.05 &ndash; 2018.04</div>
+          <div class="intern-company">Ontario Teachers' Pension Plan (OTPP)</div>
+        </div>
+        <div class="intern-entry">
+          <div class="intern-period">2016.05 &ndash; 2016.08</div>
+          <div class="intern-company">Teradata</div>
+        </div>
+        <div class="intern-logos">
+          <img src="./images/4d.PNG" alt="4D Shoetech">
+          <img src="images/otpp.png" alt="OTPP">
+          <img src="images/tera.png" alt="Teradata">
+        </div>
+      </div>
+    </div>
 
-					<div class="mySlides" style="background-image: url('images/img2.jpg'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+  </div>
 
-					<div class="mySlides" style="background-image: url('images/untitle3.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+  <!-- SECTION: Projects -->
+  <div class="section-divider"><span>Projects</span></div>
 
-					<div class="mySlides" style="background-image: url('images/icon.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-						</div>
-					</div>
+  <div class="grid grid-2" style="margin-top: 24px;">
 
-					<div class="mySlides" style="background-image: url('images/untitle0.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-					</div>
-					</div>
+    <div class="panel">
+      <div class="panel-label">Project</div>
+      <div class="panel-body">
+        <span class="project-tag">ML &bull; Visualization</span>
+        <div class="panel-title">VisML-Colorization</div>
+        <p class="panel-text">An implementation &amp; visualization of an image colorization deep learning model using d3.js.</p>
+        <a href="https://github.com/zilixie/VisML-Colorize" class="btn btn-dark" style="margin-top: 16px;">GitHub &rarr;</a>
+      </div>
+    </div>
 
-					<div class="mySlides" style="background-image: url('images/untitle5.png'); background-size: cover; height: 100%;">
-						<div class="card-body">
-						<h4 class="card-title" style="color: white">Photos</h4>
-						<p class="card-text"><br><br><br><br><br><br><br><br><br><br></p>
-					</div>
-					</div>
-					<button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-					<button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-				
-			</div>
-		</div>
+    <div class="panel">
+      <div class="panel-label">Project</div>
+      <div class="panel-body">
+        <span class="project-tag">Deep Learning &bull; CNN</span>
+        <div class="panel-title">Material Scan: SVBRDF</div>
+        <p class="panel-text">An implementation &amp; visualization of a UNet image colorization deep learning model using CNN.</p>
+        <a href="#" class="btn btn-dark" style="margin-top: 16px;">View &rarr;</a>
+      </div>
+    </div>
 
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" style="border-radius: 0px;">
-				<div class="card-body">
-					<h4 class="card-title">Interns</h4>
-					<p class="card-text">
-						2020.05~Present: 4D Shoetech (时谛智能)<br>
-						2017.05~2018.04: Ontario Teachers' Pension Plan (OTPP)<br>
-						2016.05~2016.08: Teradata
-					</p>
-					<div style="text-align: center;vertical-align: middle;">
-						<img style="width: 160px; margin-right: 20px; border-radius: 5px;" src="./images/4d.PNG">
-						<img style="width: 140px; margin-right: 20px; margin-bottom: 5px; border-radius: 5px;" src="images/otpp.png">
-						<img style="width: 140px; border-radius: 5px;" src="images/tera.png">
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
+    <div class="panel">
+      <div class="panel-label">Project</div>
+      <div class="panel-body">
+        <span class="project-tag">OpenGL &bull; Eigen &bull; SOIL</span>
+        <div class="panel-title">3D Scene Editor+</div>
+        <p class="panel-text">
+          Add / remove / move / scale / rotate objects.<br>
+          Texture, height &amp; normal map support.<br>
+          Procedural textures via Perlin noise.
+        </p>
+        <a href="https://github.com/zilixie/Relief-and-Normal-Mapping" class="btn btn-dark" style="margin-top: 16px;">GitHub &rarr;</a>
+      </div>
+    </div>
 
-		<div class="row">
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" style="border-radius: 0px;">
-				<div class="card-body">
-					<h6 class="card-title">Project</h6>
-					<h4 class="card-title">VisML-Colorization</h4>
-					<p class="card-text">An implementation & visualization of image colorization deep learning model using d3js.</p>
-					<a href="https://github.com/zilixie/VisML-Colorize" class="btn btn-primary hvr-float">See on Github</a>
-				</div>
-			</div>
-		</div>
+    <div class="panel">
+      <div class="panel-label">Homework</div>
+      <div class="panel-body">
+        <span class="project-tag">OpenGL &bull; Eigen</span>
+        <div class="panel-title">3D Scene Editor</div>
+        <p class="panel-text">
+          Add / remove / move / scale / rotate objects.<br>
+          Blinn-Phong shading.<br>
+          Capture screen and produce SVG.
+        </p>
+        <a href="https://github.com/zilixie/3D-Scene-Editor" class="btn btn-dark" style="margin-top: 16px;">GitHub &rarr;</a>
+      </div>
+    </div>
 
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" style="border-radius: 0px;">
-				<div class="card-body">
-					<h6 class="card-title">Project</h6>
-					<h4 class="card-title">Material Scan: svbrdf</h4>
-					<p class="card-text">An implementation & visualization of a Unet image colorization deep learning model using CNN.</p>
-					<a href="#" class="btn btn-primary hvr-float">To Project</a>
-				</div>
-			</div>
-		</div>
-		</div>
+  </div>
 
-		<div class="row">
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" style="border-radius: 0px;">
-				<div class="card-body">
-					<h6 class="card-title">Project</h6>
-					<h4 class="card-title">3D Scene Editor+</h4>
-					<p class="card-text">OpenGL + Eigen + SOIL. <br>Add/remove/move/scale/rotate objects.<br>Supports texture/height/normal maps.<br>Supports percedural texture using Perlin noise.</p>
-					<a href="https://github.com/zilixie/Relief-and-Normal-Mapping" class="btn btn-primary hvr-float">To Project</a>
-				</div>
-			</div>
-		</div>
+  <!-- FOOTER -->
+  <footer>
+    <span>Zili Xie &copy; 2024</span>
+    <span>NYU &bull; Computer Science &bull; ML / CV / CG</span>
+  </footer>
 
-		<div class="col-lg-6" style="margin-top: 30px;">
-			<div class="card h-100" style="border-radius: 0px;">
-				<div class="card-body">
-					<h6 class="card-title">Homework</h6>
-					<h4 class="card-title">3D Scene Editor</h4>
-					<p class="card-text">OpenGL + Eigen. <br>Add/remove/move/scale/rotate objects.<br>Blinn-Phong shading.<br>Capture screen and produce svg.</p>
-					<a href="https://github.com/zilixie/3D-Scene-Editor" class="btn btn-primary hvr-float">To Project</a>
-				</div>
-			</div>
-		</div>
-		</div>
-		<div style="margin-bottom: 30px;"></div>
-	</div>
 
 </body>
-
-<script type="text/javascript">
-document.body.style.zoom="75%"
-$(document).ready(function(){
-    w_w = $(window).width();
-    if(w_w < 992){
-        $("#special-resize-1").addClass('flex-row flex-wrap');
-        $("#special-resize-img-1").removeClass('card-img-top');
-        $("#special-resize-img-1").css('height', '260px');
-        $("#special-resize-div-1").css('width', '30%');
-
-        // $("#special-resize-img-2").css('height', '400px');
-        // $("#special-resize-img-2").css('width', '200px');
-    }
-    //onResize
-    $(window).resize(function(){
-    w_w = $(window).width();
-    if(w_w < 992){
-        $("#special-resize-1").addClass('flex-row flex-wrap');
-        $("#special-resize-img-1").removeClass('card-img-top');
-        $("#special-resize-img-1").css('height', '260px');
-        $("#special-resize-div-1").css('width', '30%');
-
-        // $("#special-resize-img-2").css('height', '400px');
-        // $("#special-resize-img-2").css('width', '200px');
-    }
-    });
-
-    w_w = $(window).width();
-    if(w_w >= 992){
-        $("#special-resize-1").removeClass('flex-row flex-wrap');
-        $("#special-resize-img-1").addClass('card-img-top');
-        $("#special-resize-img-1").css('height', '');
-        $("#special-resize-div-1").css('width', '');
-
-        // $("#special-resize-img-2").css('height', '300px');
-        // $("#special-resize-img-2").css('width', '400px');
-    }
-    //onResize
-    $(window).resize(function(){
-    w_w = $(window).width();
-    if(w_w >= 992){
-        $("#special-resize-1").removeClass('flex-row flex-wrap');
-        $("#special-resize-img-1").addClass('card-img-top');
-        $("#special-resize-img-1").css('height', '');
-        $("#special-resize-div-1").css('width', '');
-
-        // $("#special-resize-img-2").css('height', '300px');
-        // $("#special-resize-img-2").css('width', '400px');
-    }
-    });
-});
-
-var slideIndex = 1;
-showDivs(slideIndex);
-// new IdealImageSlider.Slider('#slider');
-
-// window.setInterval(function () {plusDivs(1)}, 3000);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-
-
-
-function show() {
-	Swal.fire({
-	  title: '<h4>Hello</h4>',
-	  width: '60%',
-	  html:
-	    	'<p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><p>Hi, I am a second year master’s student in Computer Science at New York University. Before joining NYU, I received my bachelor’s degree in Computer Science (specialist program) and Statistic (minor) at University of Toronto st. George campus with distinction. My main focusing (interested) areas now are Machine learning, Computer Vision and Computer Graphics.</p><a href="#" class="btn btn-primary hvr-float">Go somewhere</a>',
-	  showCloseButton: true,
-	  showConfirmButton: false,
-	})
-}
-
-</script>
-
-
 </html>
